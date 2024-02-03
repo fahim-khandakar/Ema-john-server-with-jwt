@@ -28,7 +28,7 @@ async function run() {
     const productCollection = client.db("emaJohnDB").collection("products");
 
     app.get("/products", async (req, res) => {
-      const page = parseInt(req.query.page);
+      const page = parseInt(req.query.page - 1);
       const size = parseInt(req.query.size);
 
       console.log("product query", req.query);
